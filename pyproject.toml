@@ -9,6 +9,7 @@ authors = [
 requires-python = ">=3.12"
 dependencies = [
     "fastchat>=0.1.0",
+    "lm-eval>=0.4.9.1",
     "torch>=2.9.1",
     "transformers>=4.57.1",
     "trl>=0.25.1",
