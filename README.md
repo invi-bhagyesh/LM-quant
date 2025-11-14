@@ -9,11 +9,10 @@ This project benchmarks Small Language Models (SLMs) using **quantization** and 
 Clone the repository and install dependencies:
 
 ```
-git clone https://github.com/your-repo/qllm_eval.git
-cd qllm_eval
+git clone https://github.com/invi-bhagyesh/lm_quant.git
+cd lm_quant
 git checkout anthropic
 pip install -r requirements.txt
-pip install lm-evaluation-harness
 ```
 ---
 
@@ -21,7 +20,7 @@ pip install lm-evaluation-harness
 
 Use the main evaluation script to benchmark quantized or DPO-trained models:
 ```
-CUDA_VISIBLE_DEVICES=0 python qllm_eval/evaluation/q_harness/main.py 
+CUDA_VISIBLE_DEVICES=0 python lm_quant/evaluation/q_harness/main.py 
     --model_path {model}
     --tasks {task}
     --w_bit {w_bit}
@@ -35,14 +34,14 @@ CUDA_VISIBLE_DEVICES=0 python qllm_eval/evaluation/q_harness/main.py
 
 ### Quantized Evaluation
 ```
-CUDA_VISIBLE_DEVICES=0 python qllm_eval/evaluation/q_harness/main.py 
+CUDA_VISIBLE_DEVICES=0 python lm_quant/evaluation/q_harness/main.py 
     --model_path "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
     --tasks crows_pairs_english_religion
     --w_bit 8
 ```
 ### RLHF (DPO) Evaluation
 ```
-CUDA_VISIBLE_DEVICES=0 python qllm_eval/evaluation/q_harness/main.py 
+CUDA_VISIBLE_DEVICES=0 python lm_quant/evaluation/q_harness/main.py 
     --model_path "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
     --tasks helpfulness
     --dataset PKU
